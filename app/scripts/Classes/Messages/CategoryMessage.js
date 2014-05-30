@@ -1,13 +1,13 @@
-require('scripts/Classes/ReceiveMsg/Abstract');
+require('scripts/Classes/Messages/Abstract');
 
 /**
  * This class represents a conversation message
  *
  * @class Conversation
- * @extends EmberChat.ReceiveMsg.Abstract
- * @namespace EmberChat.ReceiveMsg
+ * @extends EmberChat.Messages.Abstract
+ * @namespace EmberChat.Messages
  */
-Webster.ReceiveMsg.CategoryMessage = Webster.ReceiveMsg.Abstract.extend({
+Webster.Messages.CategoryMessage = Webster.Messages.Abstract.extend({
 
     /**
      * Process this message

@@ -1,4 +1,4 @@
-require('scripts/Classes/ReceiveMsg/*');
+require('scripts/Classes/Messages/*');
 
 /**
  * The MessageProcessor processes all messages which come in. It determines which message type it is, creates the
@@ -21,8 +21,9 @@ Webster.MessageProcessor = Ember.Object.create({
 
         var message = null;
         try{
-            console.log('Receiving message: ' + JSON.stringify(messageContent));
-            message = Webster.ReceiveMsg[messageContent.type].create(messageContent);
+            console.log('%c => Receiving message: ', 'background: #369a42; color: #fff');
+            console.log(JSON.stringify(messageContent));
+            message = Webster.Messages[messageContent.type].create(messageContent);
         }catch (e){
             Ember.warn("Unknown message type: " + messageContent.type);
         }
@@ -40,7 +41,8 @@ Webster.MessageProcessor = Ember.Object.create({
      */
     processOutgoing: function(message) {
         if(typeof message === 'object') {
-            console.log('Sending message: ' + JSON.stringify(message));
+            console.log('%c <= Sending message: ', 'background: #cc4a4d; color: #fff');
+            console.log(JSON.stringify(message));
             Webster.Socket.sendMessage(JSON.stringify(message));
         }
     }

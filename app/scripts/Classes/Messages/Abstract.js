@@ -3,10 +3,10 @@
  *
  * @class Abstract
  * @extends Ember.Object
- * @namespace EmberChat.ReceiveMsg
+ * @namespace EmberChat.Messages
  */
-Webster.ReceiveMsg = {};
-Webster.ReceiveMsg.Abstract = Ember.Object.extend({
+Webster.Messages = {};
+Webster.Messages.Abstract = Ember.Object.extend({
 
     /**
      * Process this message
@@ -16,5 +16,5 @@ Webster.ReceiveMsg.Abstract = Ember.Object.extend({
      */
     process: function() {
         throw new Ember.Error('Process method needs do be implemented in '+ this.constructor.toString());
-    }
+    },
 });
